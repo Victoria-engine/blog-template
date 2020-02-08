@@ -11,19 +11,21 @@ const VictoriaProvider: React.FC = ({ children }) => {
   const key = process.env.REACT_APP_VICTORIA_KEY || ''
   const domain = process.env.REACT_APP_DOMAIN || 'http://localhost:3001'
 
+  const client = new Victoria.VictoriaClient(key, domain)
+
   useEffect(() => {
     // Fetch blog data
     if (!blog) {
-      Victoria.createClient({ key, domain })
-        .then(({ data }: any) => {
-          setBlog(data)
+      //const client = new Victoria.VictoriaClient({ key, domain })
+      client.createClient()
+        .then((res: any) => {
+          setBlog(res.data)
         })
-        .catch((err: Error) => err)
     }
-  }, [blog, domain, key])
+  }, [blog, client, domain, key])
 
   return (
-    <VictoriaContext.Provider value={{ key, blog }}>
+    <VictoriaContext.Provider value={{ key, blog, client }}>
       {children}
     </VictoriaContext.Provider>)
 }

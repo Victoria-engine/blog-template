@@ -1,9 +1,10 @@
 import React from 'react'
 import { PostProps as Props } from './types'
+import classes from './styles.module.scss'
 
 const Post: React.FC<Props> = ({ post, onOpenPost, ...rest }) => {
   return (
-    <article onClick={onOpenPost} {...rest}>
+    <article onClick={onOpenPost} className={classes.postItem} {...rest}>
       <div>
         <h2>{post.title}</h2>
       </div>

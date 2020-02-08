@@ -1,0 +1,9 @@
+@import '../../styles/colors.scss';
+
+.blog {
+  display: flex;
+  flex-flow: column;
+  margin: 20px auto;
+  justify-content: center;
+  color: $text-color;
+}

@@ -11,4 +11,5 @@ export interface FooterProps {
 export interface UseVictoria {
   blog: BlogType,
   key: string,
+  client: any,
 }

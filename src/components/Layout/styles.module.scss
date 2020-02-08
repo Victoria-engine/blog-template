@@ -1,0 +1,24 @@
+@import '.../../../../styles/colors.scss';
+
+.layout {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+}
+
+.content {
+  margin: auto;
+}
+
+.navbar {
+  padding-top: 56px;
+  margin-right: auto;
+
+  h1 {
+    font-size: 23px;
+    font-family: Montserrat,sans-serif;
+    line-height: 1.1;
+    font-weight: 900;
+    color: $primary-color;
+  }
+}
