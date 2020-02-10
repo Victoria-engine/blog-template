@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { PostType } from '../../components/Post/types'
 import { PostProps as Props } from '../types'
 import { useVictoria } from '../../components/VictoriaContext'
+import classes from './styles.module.scss'
 
 const Post: React.FC<Props> = ({ history }) => {
   const [post, setPost] = useState<PostType>()
@@ -23,7 +24,7 @@ const Post: React.FC<Props> = ({ history }) => {
   if(!post) return <div>Loading...</div>
 
   return (
-    <main>
+    <main className={classes.page}>
       <h1>{post.title}</h1>
 
       <span>{post.createdAt}</span>

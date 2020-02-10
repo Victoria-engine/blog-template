@@ -6,4 +6,10 @@
   margin: 20px auto;
   justify-content: center;
   color: $text-color;
+
+  h2 {
+    margin-bottom: 0;
+    font-weight: bold;
+    font-family: Montserrat, sans-serif;
+  }
 }

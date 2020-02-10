@@ -18,11 +18,12 @@ const Home: React.FC<Props> = ({ history }) => {
   const hasBlogData = blog && blog.posts
 
   return (
-    <main className={classes.blog}>
+    <div className={classes.blog}>
       <h2>Posts</h2>
+
       {hasBlogData && blog.posts.map(post =>
         <Post post={post} key={`${post._id}post`} onOpenPost={navigatePostHandler(post._id)} />)}
-    </main>
+    </div>
   )
 }
 

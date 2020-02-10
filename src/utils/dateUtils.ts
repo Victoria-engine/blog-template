@@ -1,0 +1,19 @@
+import TimeAgo from 'javascript-time-ago'
+
+// Load locale-specific relative date/time formatting rules.
+import en from 'javascript-time-ago/locale/en'
+// Add locale-specific relative date/time formatting rules.
+TimeAgo.addLocale(en)
+
+export const getTimestamp = (timestamp: string | number) => {
+  return new Date(timestamp)
+}
+
+export const getRelativeDate = (current: number) => {
+  return timeDifference(current)
+}
+
+function timeDifference(current: number) {
+  const timeAgo = new TimeAgo('en-GB')
+  return timeAgo.format(new Date(current))
+}
