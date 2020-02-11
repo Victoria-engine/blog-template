@@ -1,5 +1,46 @@
-@import '../../styles/colors.scss';
+@import "../../styles/colors.scss";
 
 .page {
+  margin: 20px auto;
+}
 
+.header {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 28px;
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.1;
+    font-weight: 900;
+    margin-bottom: 7px;
+    color: #232129;
+  }
+
+  span {
+    color: $grey-light;
+  }
+}
+
+.tags {
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: $grey-light;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.content {
+  margin: 40px auto;
 }

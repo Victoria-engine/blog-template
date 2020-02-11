@@ -9,6 +9,10 @@ export const getTimestamp = (timestamp: string | number) => {
   return new Date(timestamp)
 }
 
+export const transformToLocalDate = (timestamp: string | number) => {
+  return new Date(timestamp).toLocaleDateString()
+}
+
 export const getRelativeDate = (current: number) => {
   return timeDifference(current)
 }

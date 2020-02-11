@@ -1,4 +1,4 @@
-@import '.../../../../styles/colors.scss';
+@import ".../../../../styles/colors.scss";
 
 .layout {
   width: 100%;
@@ -12,12 +12,17 @@
 }
 
 .navbar {
-  padding-top: 56px;
+  padding-top: 26px;
   margin-right: auto;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
   h1 {
     font-size: 26px;
-    font-family: Montserrat,sans-serif;
+    font-family: Montserrat, sans-serif;
     line-height: 1.1;
     font-weight: 900;
     color: $primary-color;
