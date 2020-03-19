@@ -4,7 +4,21 @@ export type PostType = {
   _id: string,
   slug: string, // learning-javascript
   title: string, // Learning Javascript
-  html: string,
+  html: {
+    blocks: {
+      type: string,
+      data: {
+        text: string,
+        level?: number,
+        items?: any[],
+        code?: string,
+        file?: {
+          url: string,
+        },
+        caption?: string,
+      }
+    }[],
+  },
   hero_image?: string,
   visibility: PostVisibility,
   excerpt: string, // Welcome to this...
