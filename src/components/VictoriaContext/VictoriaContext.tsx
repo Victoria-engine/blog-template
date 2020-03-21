@@ -7,7 +7,7 @@ import { UseVictoria } from '../types'
 const VictoriaContext = React.createContext()
 
 const VictoriaProvider: React.FC = ({ children }) => {
-  const [blog, setBlog] = useState<BlogType>()
+  const [data, setData] = useState<BlogType>()
   const key = process.env.REACT_APP_VICTORIA_KEY || ''
   const domain = process.env.REACT_APP_DOMAIN || 'http://localhost:3001'
 
@@ -15,17 +15,17 @@ const VictoriaProvider: React.FC = ({ children }) => {
 
   useEffect(() => {
     // Fetch blog data
-    if (!blog) {
+    if (!data) {
       //const client = new Victoria.VictoriaClient({ key, domain })
       client.createClient()
         .then((res: any) => {
-          setBlog(res.data)
+          setData(res.data)
         })
     }
-  }, [blog, client, domain, key])
+  }, [data, client, domain, key])
 
   return (
-    <VictoriaContext.Provider value={{ key, blog, client }}>
+    <VictoriaContext.Provider value={{ key, ...data, client }}>
       {children}
     </VictoriaContext.Provider>)
 }

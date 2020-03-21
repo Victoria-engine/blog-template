@@ -43,4 +43,38 @@
 
 .content {
   margin: 40px auto;
+
+  p, li {
+    line-height: 1.6em;
+    color: $text-color;
+    font-size: 18px;
+  }
+  b {
+    font-weight: 700;
+  }
+
+  blockquote {
+    font-style: italic;
+    color: #666;
+    margin-top: 29px;
+    border-left: 3px solid $primary-color;
+    padding-left: 20px;
+    margin-left: 5px;
+    padding-bottom: 2px;
+    
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    padding: 1em 0;
+    margin: 0;
+    margin-bottom: -0.9em;
+    line-height: 1.5em;
+    outline: none;
+    font-family: 'Poppins', 'Roboto', 'Segoe UI', sans-serif;
+    color: #3e4b50;
+  }
 }

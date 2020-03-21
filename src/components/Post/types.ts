@@ -16,6 +16,8 @@ export type PostType = {
           url: string,
         },
         caption?: string,
+        style?: 'ordered',
+        html?: string,
       }
     }[],
   },

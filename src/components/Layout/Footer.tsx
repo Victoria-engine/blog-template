@@ -6,8 +6,7 @@ const Footer: React.FC<Props> = ({ blogData }) => {
 
   return (
     <footer>
-      <p>Proudly made with <span role="img" aria-label="hearth emoji"> ❤️ </span> 
-      by {blogData.author} - {new Date().getFullYear()}</p>
+      <p>Proudly made with <a href='https://www.cms.victoria.com'>Victoria</a> by {blogData.author} - {new Date().getFullYear()}</p>
     </footer>
   )
 }

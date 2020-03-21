@@ -10,6 +10,9 @@ export interface FooterProps {
 
 export interface UseVictoria {
   blog: BlogType,
+  posts: BlogType['posts'],
+  /**api key  */
   key: string,
+  /** client object */
   client: any,
 }
