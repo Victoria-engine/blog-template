@@ -9,7 +9,7 @@ const VictoriaContext = React.createContext()
 const VictoriaProvider: React.FC = ({ children }) => {
   const [data, setData] = useState<BlogType>()
   const key = process.env.REACT_APP_VICTORIA_KEY || ''
-  const domain = process.env.REACT_APP_DOMAIN || 'http://localhost:3001'
+  const domain = process.env.REACT_APP_API_DOMAIN || 'http://localhost:3001'
 
   const client = new Victoria.VictoriaClient(key, domain)
 
