@@ -8,17 +8,17 @@ import classes from './styles.module.scss'
  * Layout wrapper
  */
 const Layout: React.FC = ({ children }) => {
-  const { blog } = useVictoria()
+  const blog = useVictoria()
 
   return (
     <div className={classes.layout}>
-      <Navbar blogData={blog} />
+      <Navbar blog={blog} />
 
       <main className={classes.content}>
         {children}
       </main>
 
-      <Footer blogData={blog}/>
+      <Footer blog={blog}/>
     </div> 
   )
 }

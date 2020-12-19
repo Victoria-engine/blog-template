@@ -12,27 +12,26 @@
 
 <br />
 
-Victoria is a work in progress blog engine and a set of tools for creating and managing content.
+Victoria engine is a headless CMS and a set of tools for creating, managing and distibuting content for multiple front-ends.
+
 
 ## Blog Template
 
-Built from `cra (create-react-app)`
+[Built from CRA (create-react-app)](https://github.com/facebook/create-react-app) with a basic layout and `victoria-sdk` implementation to connect to your content.
+
+Made ready for changes and custom deployment.
+
 
 ### Quick start
 
-1. `git clone` this repository
-2. `yarn`
-3. `create a .env file in the root of packages/api`
-4. `.env structure:`
+1. `git clone git@github.com:Victoria-engine/blog-template.git`
+2. `npm i`
+3. `create a .env file in the root directory`
+4. and add the folowing variable to it
 
 ```bash
-REACT_APP_VICTORIA_KEY = "YOUR_BLOG_KEY"
-REACT_APP_DOMAIN = "http://localhost:3001"
+REACT_APP_VICTORIA_CONSUMER_KEY = YOUR_BLOG_KEY
 ```
 
-5. `yarn start` to run the server
-
-### Demo
-
-Try out this demo: https://victoria-blog-demo.netlify.app/
-
+5. `npm run local` to run the server locally
+6. deploy it to your service of choice.

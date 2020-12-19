@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { PostType } from '../../components/Post/types'
+import { BlogPost } from '../../components/Post/types'
 import { PostProps as Props } from '../types'
 import { useVictoria } from '../../components/VictoriaContext'
 import classes from './styles.module.scss'
 import { transformToLocalDate } from '../../utils/dateUtils'
-import CleanDataParser from 'editor-js-react-parser'
+import EditorBlock from './EditorBlock'
 
 
 const Post: React.FC<Props> = ({ history }) => {
-  const [post, setPost] = useState<PostType>()
+  const [post, setPost] = useState<BlogPost>()
   const { client } = useVictoria()
 
   useEffect(() => {
@@ -26,25 +26,27 @@ const Post: React.FC<Props> = ({ history }) => {
 
   if (!post) return <div>Loading...</div>
 
+
   return (
     <main className={classes.page}>
       <div className={classes.header}>
         <h1>{post.title}</h1>
-
-        <span>{transformToLocalDate(post.createdAt)}</span>
       </div>
 
       <div className={classes.row}>
-        <span>Posted by {post.author}</span>
+        <span>
+          Posted by <b>{post.user.name}</b>,
+         at {transformToLocalDate(post.created_at)}
+        </span>
       </div>
 
       <div className={classes.tags}>
-        <span>{post.tags && post.tags.map(tag => <span>{tag}</span>)}</span>
+        <span>{post.tags?.map(tag => <span>{tag}</span>)}</span>
       </div>
 
       <article className={classes.content}>
-        {
-          post.html.blocks.map((block, idx) => CleanDataParser(block, idx))
+        {JSON.parse(post.text)
+          .blocks.map((block: any, idx: any) => EditorBlock(block, idx))
         }
       </article>
 

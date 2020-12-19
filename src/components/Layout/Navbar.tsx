@@ -3,12 +3,12 @@ import { NavbarProps as Props } from '../types'
 import classes from './styles.module.scss'
 import { Link } from 'react-router-dom'
 
-const Navbar: React.FC<Props> = ({ blogData }) => {
-  if (!blogData) return null
+const Navbar: React.FC<Props> = ({ blog }) => {
+  if (!blog) return null
 
   return (
     <nav className={classes.navbar}>
-      <Link to='/'> <h1>{blogData.name}</h1> </Link>
+      <Link to='/'> <h1>{blog.title}</h1> </Link>
     </nav>
   )
 }

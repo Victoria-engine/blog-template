@@ -1,38 +1,36 @@
 import React, { useState, useEffect } from 'react'
-import { BlogType } from '../../pages/types'
+import { Blog } from '../../pages/types'
 import Victoria from 'victoria-sdk'
 import { UseVictoria } from '../types'
+import { API_URL } from '../../constants'
+
 
 //@ts-ignore
 const VictoriaContext = React.createContext()
 
 const VictoriaProvider: React.FC = ({ children }) => {
-  const [data, setData] = useState<BlogType>()
-  const key = process.env.REACT_APP_VICTORIA_KEY || ''
-  const domain = process.env.REACT_APP_API_DOMAIN || 'http://localhost:3001'
+  const [blog, setBlog] = useState<Blog>()
+  const consumerKey = process.env.REACT_APP_VICTORIA_CONSUMER_KEY || ''
 
-  const client = new Victoria.VictoriaClient(key, domain)
+  const client = new Victoria.VictoriaClient(consumerKey, API_URL.PROD)
 
   useEffect(() => {
-    // Fetch blog data
-    if (!data) {
-      //const client = new Victoria.VictoriaClient({ key, domain })
+    if (!blog) {
       client.createClient()
         .then((res: any) => {
-          setData(res.data)
+          setBlog(res.data)
         })
     }
-  }, [data, client, domain, key])
+  }, [blog, client])
+
 
   return (
-    <VictoriaContext.Provider value={{ key, ...data, client }}>
+    <VictoriaContext.Provider value={{ consumerKey, ...blog, client }}>
       {children}
     </VictoriaContext.Provider>)
 }
 
-/**
- * Provider consumer hook 
- */
+
 const useVictoria = (): UseVictoria => {
   const context = React.useContext(VictoriaContext)
   if (!context) {

@@ -9,8 +9,7 @@ import classes from './styles.module.scss'
  */
 const Home: React.FC<Props> = ({ history }) => {
   const { posts } = useVictoria()
-  
-  /** Navigates to the clicked post */
+
   const navigatePostHandler = (postID: string) => () => {
     history.push(`/post/${postID}`)
   }
@@ -21,8 +20,14 @@ const Home: React.FC<Props> = ({ history }) => {
     <div className={classes.blog}>
       <h2>Posts</h2>
 
-      {hasBlogData && posts.map(post =>
-        <Post post={post} key={`${post._id}post`} onOpenPost={navigatePostHandler(post._id)} />)}
+      {hasBlogData &&
+        posts.map(post =>
+          <Post
+            post={post}
+            key={`${post.id}post`}
+            onOpenPost={navigatePostHandler(post.id)}
+          />)
+      }
     </div>
   )
 }

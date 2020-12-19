@@ -1,18 +1,11 @@
-import { BlogType } from "../pages/types";
+import { VictoriaClient } from 'victoria-sdk/lib/core'
+import { Blog } from '../pages/types'
+
 
 export interface NavbarProps {
-  blogData: BlogType,
+  blog: Blog,
 }
 
-export interface FooterProps {
-  blogData: BlogType,
-}
-
-export interface UseVictoria {
-  blog: BlogType,
-  posts: BlogType['posts'],
-  /**api key  */
-  key: string,
-  /** client object */
-  client: any,
+export type UseVictoria = Blog & {
+  client: VictoriaClient
 }
