@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { EditorBlockData } from '../types'
-//import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
 
 
 /**
