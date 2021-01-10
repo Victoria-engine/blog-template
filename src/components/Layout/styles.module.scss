@@ -39,3 +39,15 @@ footer {
     color: $primary-color;
   }
 }
+
+.titleDivider {
+  display: flex;
+  flex-flow: column;
+  text-align: start;
+
+  .description {
+    color: rgb(62, 75, 80);
+    font-size: 13px;
+    margin: 0;
+  }
+}

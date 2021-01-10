@@ -8,7 +8,11 @@ const Navbar: React.FC<Props> = ({ blog }) => {
 
   return (
     <nav className={classes.navbar}>
-      <Link to='/'> <h1>{blog.title}</h1> </Link>
+
+      <div className={classes.titleDivider}>
+        <Link to='/'> <h1>{blog.title}</h1> </Link>
+        <p className={classes.description}>{blog.description}</p>
+      </div>
     </nav>
   )
 }
